@@ -261,4 +261,18 @@ func init() {
 			return math.Atan(args[0])
 		},
 	}
+	funcMap["max"] = Func {
+		Name: "max",
+		Args: 2,
+		Func: func(args ...float64) float64 {
+			return math.Max(args[0], args[1])
+		},
+	}
+	funcMap["min"] = Func {
+		Name: "min",
+		Args: 2,
+		Func: func(args ...float64) float64 {
+			return math.Min(args[0], args[1])
+		},
+	}
 }
