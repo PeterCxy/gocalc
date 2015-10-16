@@ -27,12 +27,12 @@ func TestCalc(t *testing.T) {
 	test(t, "sin(pi / 6)", 0.5)
 	test(t, "cos(pi / 3)", 0.5)
 	test(t, "tan(pi / 4)", 1)
-	test(t, "arccos(0.5)", math.Pi / 3)
+	test(t, "arccos(0.5)", math.Pi/3)
 }
 
 func test(t *testing.T, expr string, expect float64) {
 	r, err := Calculate(expr)
-	fmt.Printf(strings.Replace(expr, "%", "%%", -1) + " = %f, expect %f\n", r, expect)
+	fmt.Printf(strings.Replace(expr, "%", "%%", -1)+" = %f, expect %f\n", r, expect)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -42,8 +42,9 @@ func test(t *testing.T, expr string, expect float64) {
 }
 
 var EPSILON float64 = 0.00000001
+
 func floatEquals(a, b float64) bool {
-	if ((a - b) < EPSILON && (b - a) < EPSILON) {
+	if (a-b) < EPSILON && (b-a) < EPSILON {
 		return true
 	} else {
 		return false
